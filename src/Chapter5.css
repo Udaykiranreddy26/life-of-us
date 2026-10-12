@@ -1,0 +1,385 @@
+.chapter5-page {
+min-height: 100vh;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 32px 18px;
+box-sizing: border-box;
+background: linear-gradient(135deg, #fff0f5, #fce0eb, #fff8ef);
+color: #603b4b;
+font-family: Georgia, "Times New Roman", serif;
+}
+
+.chapter5-hearts {
+position: absolute;
+inset: 0;
+overflow: hidden;
+pointer-events: none;
+}
+
+.chapter5-hearts span {
+position: absolute;
+left: calc(3% + var(--heart-index) * 12.5%);
+bottom: -50px;
+color: rgba(206, 88, 132, 0.25);
+font-size: calc(20px + var(--heart-index) * 2px);
+animation: chapter5-float 11s linear infinite;
+animation-delay: calc(var(--heart-index) * -1.4s);
+}
+
+@keyframes chapter5-float {
+0% {
+transform: translateY(0) rotate(0deg);
+opacity: 0;
+}
+15% {
+opacity: 1;
+}
+85% {
+opacity: 0.8;
+}
+100% {
+transform: translateY(-110vh) rotate(35deg);
+opacity: 0;
+}
+}
+
+.chapter5-card,
+.chapter5-envelope-screen,
+.chapter5-reveal-screen {
+position: relative;
+z-index: 1;
+width: min(760px, 100%);
+padding: 34px;
+box-sizing: border-box;
+text-align: center;
+border: 1px solid rgba(198, 110, 143, 0.25);
+border-radius: 28px;
+background: rgba(255, 255, 255, 0.87);
+box-shadow: 0 18px 55px rgba(135, 65, 91, 0.13);
+backdrop-filter: blur(8px);
+}
+
+.chapter5-label {
+margin: 0;
+color: #bb6888;
+font-family: Arial, sans-serif;
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+
+.chapter5-page-number {
+margin: 13px 0 17px;
+color: #ad7b8f;
+font-family: Arial, sans-serif;
+font-size: 13px;
+}
+
+.chapter5-progress {
+display: flex;
+justify-content: center;
+gap: 7px;
+margin-bottom: 28px;
+}
+
+.chapter5-progress span {
+width: 34px;
+height: 4px;
+border-radius: 10px;
+background: #f1dce4;
+transition: background 0.3s ease;
+}
+
+.chapter5-progress span.active {
+background: #c45d84;
+}
+
+.chapter5-content {
+animation: chapter5-appear 0.45s ease;
+}
+
+@keyframes chapter5-appear {
+from {
+opacity: 0;
+transform: translateY(9px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.chapter5-heart-icon {
+color: #d17b9c;
+font-size: 35px;
+line-height: 1;
+}
+
+.chapter5-content h1,
+.chapter5-envelope-screen h1 {
+margin: 17px 0 24px;
+color: #a84f72;
+font-size: clamp(27px, 5vw, 39px);
+font-weight: normal;
+}
+
+.chapter5-story {
+max-width: 610px;
+margin: 0 auto;
+color: #674b57;
+font-family: Arial, sans-serif;
+font-size: 15px;
+line-height: 1.9;
+}
+
+.chapter5-story p {
+margin: 0 0 15px;
+}
+
+.chapter5-content blockquote {
+max-width: 580px;
+margin: 27px auto 0;
+padding: 15px 20px;
+border-left: 3px solid #d17b9c;
+border-radius: 0 12px 12px 0;
+background: #fff3f7;
+color: #a34f72;
+font-style: italic;
+line-height: 1.7;
+}
+
+.chapter5-navigation {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+margin-top: 30px;
+}
+
+.chapter5-navigation button,
+.chapter5-open-envelope,
+.chapter5-finish-button {
+border: none;
+border-radius: 25px;
+padding: 12px 19px;
+cursor: pointer;
+font-size: 13px;
+font-weight: bold;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chapter5-navigation button:hover,
+.chapter5-open-envelope:hover,
+.chapter5-finish-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 15px rgba(163, 79, 114, 0.17);
+}
+
+.chapter5-back,
+.chapter5-back-to-story {
+background: #f8e6ed;
+color: #9e5572;
+}
+
+.chapter5-next,
+.chapter5-open-envelope,
+.chapter5-finish-button {
+background: #bd5f83;
+color: white;
+}
+
+.chapter5-counter {
+color: #ad7b8f;
+font-family: Arial, sans-serif;
+font-size: 13px;
+}
+
+/* Envelope screen */
+
+.chapter5-envelope-screen {
+padding-top: 48px;
+padding-bottom: 48px;
+animation: chapter5-appear 0.6s ease;
+}
+
+.chapter5-envelope-icon {
+margin: 28px 0 15px;
+font-size: 76px;
+animation: chapter5-envelope-float 2.5s ease-in-out infinite;
+}
+
+@keyframes chapter5-envelope-float {
+0%, 100% {
+transform: translateY(0) rotate(-3deg);
+}
+50% {
+transform: translateY(-9px) rotate(3deg);
+}
+}
+
+.chapter5-envelope-text {
+max-width: 480px;
+margin: 0 auto 28px;
+color: #795563;
+font-family: Arial, sans-serif;
+font-size: 15px;
+line-height: 1.9;
+}
+
+.chapter5-open-envelope {
+display: block;
+margin: 0 auto;
+padding: 15px 27px;
+font-size: 14px;
+}
+
+.chapter5-back-to-story {
+display: block;
+margin: 20px auto 0;
+padding: 10px 15px;
+border: none;
+border-radius: 20px;
+cursor: pointer;
+font-size: 12px;
+}
+
+/* Final name reveal */
+
+.chapter5-reveal-screen {
+padding-top: 40px;
+padding-bottom: 40px;
+animation: chapter5-appear 0.8s ease;
+}
+
+.chapter5-reveal-sun {
+margin: 22px 0 8px;
+color: #d7a44c;
+font-size: 58px;
+animation: chapter5-sunrise 1.5s ease both;
+}
+
+@keyframes chapter5-sunrise {
+from {
+opacity: 0;
+transform: translateY(22px) scale(0.75);
+}
+to {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+
+.chapter5-reveal-intro {
+margin: 12px 0;
+color: #a76580;
+font-size: 16px;
+font-style: italic;
+line-height: 1.7;
+}
+
+.chapter5-names {
+margin: 14px 0;
+color: #a84f72;
+font-size: clamp(38px, 8vw, 62px);
+font-weight: normal;
+animation: chapter5-appear 1s ease;
+}
+
+.chapter5-names span {
+display: inline-block;
+color: #d65b83;
+font-size: 0.7em;
+animation: chapter5-heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes chapter5-heartbeat {
+0%, 100% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.2);
+}
+}
+
+.chapter5-reveal-subtitle {
+margin: 12px 0 26px;
+color: #a76580;
+font-size: 15px;
+font-style: italic;
+}
+
+.chapter5-love-letter {
+max-width: 590px;
+margin: 0 auto;
+color: #674b57;
+font-family: Arial, sans-serif;
+font-size: 14px;
+line-height: 1.9;
+}
+
+.chapter5-love-letter p {
+margin: 0 0 16px;
+}
+
+.chapter5-forever {
+margin: 28px auto;
+padding: 20px 12px;
+border-top: 1px solid #efd0dd;
+border-bottom: 1px solid #efd0dd;
+color: #a34f72;
+font-size: 15px;
+line-height: 2;
+}
+
+.chapter5-forever strong {
+font-weight: normal;
+color: #a84f72;
+}
+
+.chapter5-finish-button {
+margin-top: 6px;
+}
+
+@media (max-width: 520px) {
+.chapter5-page {
+padding: 20px 12px;
+}
+
+.chapter5-card,
+.chapter5-envelope-screen,
+.chapter5-reveal-screen {
+padding: 26px 18px;
+border-radius: 22px;
+}
+
+.chapter5-story {
+font-size: 14px;
+line-height: 1.8;
+}
+
+.chapter5-navigation button {
+padding: 11px 12px;
+font-size: 12px;
+}
+
+.chapter5-progress span {
+width: 25px;
+}
+
+.chapter5-names {
+font-size: 42px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.chapter5-hearts span,
+.chapter5-envelope-icon,
+.chapter5-reveal-sun,
+.chapter5-names span {
+animation: none;
+}
+}
