@@ -4,6 +4,7 @@ import firstMeetingImage from "./assets/Shy Springtime Campus Romance-1.png";
 import festivalImage from "./assets/Golden Hour Festival Romance-2.png";
 import freshersDayImage from "./assets/Golden Courtyard Romance-4.png";
 import caringMomentImage from "./assets/Cherry Blossom Bento Romance-3.png";
+import believeImage from "./assets/WhatsApp Image 2026-10-12 at 3.43.21 PM.jpeg";
 import "./StoryChapter.css";
 
 const years = [
@@ -128,7 +129,7 @@ const chapters = {
         eyebrow: "WHEN LIFE FELT UNCERTAIN",
         title: "You Believed in Me",
         image:
-          "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=85",
+         believeImage,
         alt: "Sunrise breaking through a quiet landscape",
         paragraphs: [
           "As college was ending, I went through a difficult time. I worried about whether I would settle in life and whether my efforts would lead somewhere.",
